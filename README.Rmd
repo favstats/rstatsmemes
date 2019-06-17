@@ -10,10 +10,15 @@ knitr::opts_chunk$set(echo = TRUE, fig.width = 10, fig.height = 10, results = "a
 library(rstatsmemes)
 library(tidyverse)
 
-set.seed(2019)
+set.seed(252)
 ```
 
-Install package from GitHub first:
+Ever wanted to have R Memes at the ready whenever you want? 
+*Of course not.* But here is a package that does exactly that.
+
+The package is easy to use.
+
+Just install package from GitHub:
 
 ```{r, eval = F}
 devtools::install_github("favstats/rstatsmemes")
@@ -22,15 +27,32 @@ devtools::install_github("favstats/rstatsmemes")
 
 ## Show Me an R Meme
 
+Let `show_me_an_R_meme` do the rest. This will plot a random R meme from the list of all memes.
+
 ```{r, results = "asis"}
 show_me_an_R_meme(random_meme = T)
+```
+
+Want to check out a list of all memes? You can do this here:
+
+```{r, results='markup'}
+glimpse(rstatsmemes::meme_posts)
+```
+
+
+You can also display a specific meme by passing number from 1 to `r nrow(meme_posts)` (current number of memes on the Facebook page). The number refers to the date when the meme was first posted on Facebook with 1 being the first meme.
+
+```{r}
+show_me_an_R_meme(322)
 ```
 
 
 ## Top 3 Memes
 
+Here are the Top 3 liked memes on the Facebook page:
+
 ```{r}
-meme_indices <- rstatsmemes::meme_posts %>% 
+meme_indices <- meme_posts %>% 
   mutate(likes_count = as.numeric(likes_count)) %>% 
   arrange(desc(likes_count)) %>% 
   slice(1:3) %>% 
