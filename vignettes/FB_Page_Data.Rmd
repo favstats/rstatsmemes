@@ -1,0 +1,79 @@
+---
+title: "FB_Page_Data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{FB_Page_Data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(rstatsmemes)
+library(tidyverse)
+library(Rfacebook)
+```
+
+
+```{r, eval = F}
+token <- fb_authorization()
+page <- "Rmemes0"
+
+## Get a page access token for a page
+fb_oauth <- Rfacebook::getPageToken(page, token)
+
+
+tmp <- get_fb_posts(fb_oauth)
+
+# create list of dataframes and initial call
+meme_posts <- list()
+
+# paginate forward (that's where the newest data is)
+nextlink <- tmp$paging$`next`
+current <- tmp
+
+while(!is.null(nextlink)){
+  print(nextlink)
+  current <- get_content(nextlink)
+
+  ## get list with data frame
+  df <- extract_posts(current)
+
+  ## add data frame to list of dataframes
+  meme_posts <- dplyr::bind_rows(meme_posts, df)
+
+  # update prevlink
+  nextlink <- current$paging$`next`
+}
+
+
+meme_posts <- meme_posts %>%
+  # dplyr::slice(1:10) %>%
+  dplyr::mutate(data = id %>%
+                  purrr::map(~{get_post_stats(.x, fb_oauth)}
+                  )
+                ) %>%
+  tidyr::unnest(data) %>%
+  dplyr::rename(
+    # id,
+    likes_count = likes.summary.total_count,
+    comments_count = comments.summary.total_count,
+    shares_count = shares.count
+  )  %>%
+  dplyr::select(-dplyr::contains("summary.")) %>%
+  dplyr::mutate(created_time = lubridate::as_datetime(created_time)) %>%
+  arrange(created_time) %>%
+  mutate(meme_number = 1:n()) %>%
+  select(id, meme_number, everything())
+
+glimpse(meme_posts)
+```
+
+
+
