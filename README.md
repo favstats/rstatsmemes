@@ -12,13 +12,13 @@ Find us on:
 <!-- display the social media buttons in your README -->
 
 [![alt text](http://i.imgur.com/tXSoThF.png
-"twitter icon with padding")](http://www.twitter.com/rstatsmemes) [![alt
-text](http://i.imgur.com/P3YfQoD.png
-"facebook icon with padding")](http://www.facebook.com/rmemes0) [![alt
+"Twitter Meme account: @rstatsmemes")](http://www.twitter.com/rstatsmemes)
+[![alt text](http://i.imgur.com/P3YfQoD.png
+"Facebook Meme account")](http://www.facebook.com/rmemes0) [![alt
 text](http://i.imgur.com/0o48UoR.png
-"github icon with padding")](https://github.com/favstats/rstatsmemes)
-[![alt text](https://i.imgur.com/I4WkMmF.png
-"github icon with padding")](https://www.reddit.com/r/rstatsmemes/)
+"GitHub Repository: rstatsmemes")](https://github.com/favstats/rstatsmemes)
+[![alt text](https://i.imgur.com/VMlWYt8.png
+"Subreddit: r/rstatsmemes")](https://www.reddit.com/r/rstatsmemes/)
 
 <!-- links to social media icons -->
 
