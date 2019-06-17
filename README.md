@@ -5,6 +5,35 @@ Ever wanted to have R Memes at the ready whenever you want?
 
 *Of course not.* But here is a package that does exactly that.
 
+Find us on:
+
+<!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
+
+<!-- display the social media buttons in your README -->
+
+[![alt text](http://i.imgur.com/tXSoThF.png
+"twitter icon with padding")](http://www.twitter.com/rstatsmemes) [![alt
+text](http://i.imgur.com/P3YfQoD.png
+"facebook icon with padding")](http://www.facebook.com/rmemes0) [![alt
+text](http://i.imgur.com/0o48UoR.png
+"github icon with padding")](https://github.com/favstats/rstatsmemes)
+[![alt text](https://i.imgur.com/I4WkMmF.png
+"github icon with padding")](https://www.reddit.com/r/rstatsmemes/)
+
+<!-- links to social media icons -->
+
+<!-- no need to change these -->
+
+<!-- icons with padding -->
+
+<!-- icons without padding -->
+
+<!-- links to your social media accounts -->
+
+<!-- update these accordingly -->
+
+<!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
+
 ## Installation
 
 The package is easy to use.
