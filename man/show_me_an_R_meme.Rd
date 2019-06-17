@@ -14,3 +14,12 @@ show_me_an_R_meme(meme_index = NULL, random_meme = T)
 \description{
 This function shows you an R Meme from the R Memes for Statistical Fiends Facebook page
 }
+\examples{
+
+## show a random R meme
+show_me_an_R_meme()
+
+## show a specific R meme
+show_me_an_R_meme(179)
+
+}

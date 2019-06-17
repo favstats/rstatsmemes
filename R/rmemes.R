@@ -2,9 +2,17 @@
 #'
 #' This function shows you an R Meme from the R Memes for Statistical Fiends Facebook page
 #'
-#'@param meme_index Index number of the meme that you want to be displayed. Defaults to \code{NULL}.
-#'@param random_meme Show a random meme. Defaults to \code{TRUE}.
-#'@export
+#' @param meme_index Index number of the meme that you want to be displayed. Defaults to \code{NULL}.
+#' @param random_meme Show a random meme. Defaults to \code{TRUE}.
+#' @examples
+#'
+#' ## show a random R meme
+#' show_me_an_R_meme()
+#'
+#' ## show a specific R meme
+#' show_me_an_R_meme(179)
+#'
+#' @export
 show_me_an_R_meme <- function(meme_index = NULL, random_meme = T) {
 
   meme_posts <- meme_posts %>%

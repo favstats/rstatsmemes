@@ -1,8 +1,11 @@
 
 # R Memes for Statistical Fiends <img src="man/figures/rstatsmemes_logo.png" width="160px" align="right" />
 
-Ever wanted to have R Memes at the ready whenever you want? *Of course
-not.* But here is a package that does exactly that.
+Ever wanted to have R Memes at the ready whenever you want?
+
+*Of course not.* But here is a package that does exactly that.
+
+## Installation
 
 The package is easy to use.
 
