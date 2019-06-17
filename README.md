@@ -17,7 +17,7 @@ Find us on:
 "Facebook Meme account")](http://www.facebook.com/rmemes0) [![alt
 text](http://i.imgur.com/0o48UoR.png
 "GitHub Repository: rstatsmemes")](https://github.com/favstats/rstatsmemes)
-[![alt text](https://i.imgur.com/VMlWYt8.png
+[![alt text](https://i.imgur.com/LaiwEHU.png
 "Subreddit: r/rstatsmemes")](https://www.reddit.com/r/rstatsmemes/)
 
 <!-- links to social media icons -->
