@@ -56,7 +56,7 @@ glimpse(rstatsmemes::meme_posts)
     ## $ likes_count    <chr> "2", "12", "14", "12", "9", "13", "4", "7", "10",…
     ## $ comments_count <chr> "0", "4", "4", "3", "4", "2", "0", "0", "0", "5",…
 
-You can also display a specific meme by passing number from 1 to 422
+You can also display a specific meme by passing a number from 1 to 422
 (current number of memes on the Facebook page). The number refers to the
 date when the meme was first posted on Facebook with 1 being the first
 meme.

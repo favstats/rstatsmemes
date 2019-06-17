@@ -43,7 +43,7 @@ glimpse(rstatsmemes::meme_posts)
 ```
 
 
-You can also display a specific meme by passing number from 1 to `r nrow(meme_posts)` (current number of memes on the Facebook page). The number refers to the date when the meme was first posted on Facebook with 1 being the first meme.
+You can also display a specific meme by passing a number from 1 to `r nrow(meme_posts)` (current number of memes on the Facebook page). The number refers to the date when the meme was first posted on Facebook with 1 being the first meme.
 
 ```{r}
 show_me_an_R_meme(322)
@@ -73,3 +73,6 @@ show_me_an_R_meme(meme_indices[2])
 ```{r}
 show_me_an_R_meme(meme_indices[3])
 ```
+
+
+
