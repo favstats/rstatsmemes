@@ -98,7 +98,6 @@ Here are the Top 3 liked memes on the Facebook page:
 
 ```{r}
 meme_indices <- meme_posts %>% 
-  mutate(likes_count = as.numeric(likes_count)) %>% 
   arrange(desc(likes_count)) %>% 
   slice(1:3) %>% 
   pull(meme_number)

@@ -70,10 +70,40 @@ meme_posts <- meme_posts %>%
   dplyr::mutate(created_time = lubridate::as_datetime(created_time)) %>%
   arrange(created_time) %>%
   mutate(meme_number = 1:n()) %>%
-  select(id, meme_number, everything())
+  select(id, meme_number, everything()) %>% 
+  mutate_at(vars(likes_count, shares_count, comments_count), as.numeric) 
 
 glimpse(meme_posts)
 ```
 
 
+
+
+```{r}
+meme_posts %>% 
+  mutate(author = ifelse(str_detect(message, "Rashnutin"), "Rashnutin", "Aledro")) %>% 
+  mutate_at(vars(likes_count, shares_count, comments_count), as.numeric) %>% 
+  mutate_at(vars(likes_count, shares_count, comments_count), log) %>% 
+  drop_na(author) %>% 
+  ggplot(aes(author, comments_count)) +
+  geom_violin() +
+  geom_boxplot(width = 0.2)
+```
+
+```{r}
+meme_posts %>% 
+  mutate(author = ifelse(str_detect(message, "Rashnutin"), "Rashnutin", "Aledro")) %>% 
+  mutate_at(vars(likes_count, shares_count, comments_count), as.numeric) %>% 
+  mutate_at(vars(likes_count, shares_count, comments_count), log) %>% 
+  drop_na(author) %>% 
+  ggplot(aes(comments_count, shares_count, color = author)) +
+  geom_point() +
+  # geom_smooth(se = F) +
+  scale_color_viridis_d() +
+  theme_classic()
+```
+
+```{r}
+
+```
 
