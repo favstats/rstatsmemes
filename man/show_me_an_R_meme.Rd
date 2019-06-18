@@ -4,12 +4,14 @@
 \alias{show_me_an_R_meme}
 \title{Display an R Meme at your convenience}
 \usage{
-show_me_an_R_meme(meme_index = NULL, random_meme = T)
+show_me_an_R_meme(meme_index = NULL, random_meme = T, verbose = T)
 }
 \arguments{
 \item{meme_index}{Index number of the meme that you want to be displayed. Defaults to \code{NULL}.}
 
 \item{random_meme}{Show a random meme. Defaults to \code{TRUE}.}
+
+\item{verbose}{Prints messages. Defaults to \code{TRUE}.}
 }
 \description{
 This function shows you an R Meme from the R Memes for Statistical Fiends Facebook page

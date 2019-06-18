@@ -4,6 +4,7 @@
 #'
 #' @param meme_index Index number of the meme that you want to be displayed. Defaults to \code{NULL}.
 #' @param random_meme Show a random meme. Defaults to \code{TRUE}.
+#' @param verbose Prints messages. Defaults to \code{TRUE}.
 #' @examples
 #'
 #' ## show a random R meme
@@ -13,10 +14,10 @@
 #' show_me_an_R_meme(179)
 #'
 #' @export
-show_me_an_R_meme <- function(meme_index = NULL, random_meme = T) {
+show_me_an_R_meme <- function(meme_index = NULL, random_meme = T, verbose = T) {
 
   meme_posts <- meme_posts %>%
-    filter(!is.na(full_picture))
+    dplyr::filter(!is.na(full_picture))
 
   if (!is.null(meme_index)){
     random_meme <- F
@@ -24,7 +25,9 @@ show_me_an_R_meme <- function(meme_index = NULL, random_meme = T) {
 
   if (random_meme) {
 
-    message("\nChoosing a random meme...\n")
+    if (verbose) {
+      message("\nChoosing a random meme...\n")
+    }
 
     index <- sample(meme_posts$meme_number, size = 1)
 
@@ -40,17 +43,23 @@ show_me_an_R_meme <- function(meme_index = NULL, random_meme = T) {
 
   }
 
-  message(paste0("\nDisplaying Meme #", index))
 
   meme <- meme_posts %>%
-    filter(meme_number == index)
+    dplyr::filter(meme_number == index)
 
   meme_path <- meme$full_picture
   meme_message <-  meme$message
 
-  message(stringr::str_glue("\n\nLikes: {meme$likes_count}\nComments: {meme$comments_count}\nShares: {meme$shares_count}\n\n"))
+  if (verbose) {
 
-  if (!is.na(meme$message)) {
+    message(paste0("\nDisplaying Meme #", index))
+
+    message(stringr::str_glue("\n\nLikes: {meme$likes_count}\nComments: {meme$comments_count}\nShares: {meme$shares_count}\n\n"))
+
+  }
+
+
+  if (!is.na(meme$message) & verbose) {
     cat(meme_message)
   }
 
@@ -61,7 +70,6 @@ show_me_an_R_meme <- function(meme_index = NULL, random_meme = T) {
 
 }
 
-# show_me_an_R_meme()
 
 
 

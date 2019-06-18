@@ -13,7 +13,8 @@ Imports:
     dplyr,
     stringr,
     magick,
-    jsonlite
+    jsonlite,
+    magrittr
 Suggests: 
     knitr,
     rmarkdown
