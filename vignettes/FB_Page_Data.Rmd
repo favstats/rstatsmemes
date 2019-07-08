@@ -22,6 +22,8 @@ library(Rfacebook)
 
 
 ```{r, eval = F}
+source("../R/fb_helpers.R")
+
 token <- fb_authorization()
 page <- "Rmemes0"
 
@@ -88,6 +90,7 @@ meme_posts %>%
   ggplot(aes(author, comments_count)) +
   geom_violin() +
   geom_boxplot(width = 0.2)
+
 
 # usethis::use_data(meme_posts, overwrite = T)
 ```
